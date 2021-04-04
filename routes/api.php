@@ -24,6 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/send_email_test', [TestController::class, 'send_email']);
 
-Route::get('/send_email_test', function(){
-    echo 'api';
-});
+Route::get('/send_email_test', [TestController::class, 'index']);
+
+// Route::get('/send_email_test', function(){
+//     echo 'api';
+// });

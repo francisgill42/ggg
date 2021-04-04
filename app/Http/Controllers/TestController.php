@@ -12,7 +12,20 @@ class TestController extends Controller
     
     public function index()
     {
-            
+        $pdfdata = array(
+            'full_name' => 'test',
+            'address' => 'test',
+            'phone' => '0',
+            'gutter_length' => 0,
+            'total_price' => 0
+        );
+
+
+        $pdf = PDF::loadView('emails.pdfemail', $pdfdata);
+    
+        return $pdf->download('itsolutionstuff.pdf');
+
+
     }
 
     public function store(Request $request)
